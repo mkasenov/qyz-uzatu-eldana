@@ -10,15 +10,29 @@
 <title>Елдана — Қыз Ұзату</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap&subset=cyrillic,cyrillic-ext,latin,latin-ext" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Manrope:wght@300;400;500;600&display=swap&subset=cyrillic,cyrillic-ext,latin,latin-ext" rel="stylesheet">
 <style>
+/* ===== Licensed design fonts =====
+   Drop your own font files into assets/fonts/ to render the exact design type.
+   Names match the original layout: TT Norms Pro (sans) + Alistair Signature (script).
+   Until the files are present, Manrope / Marck Script are used as close fallbacks. */
+@font-face{font-family:'TT Norms Pro';font-style:normal;font-weight:300;font-display:swap;
+  src:url(assets/fonts/TTNormsPro-Light.woff2) format('woff2'),url(assets/fonts/TTNormsPro-Light.woff) format('woff')}
+@font-face{font-family:'TT Norms Pro';font-style:normal;font-weight:400;font-display:swap;
+  src:url(assets/fonts/TTNormsPro-Regular.woff2) format('woff2'),url(assets/fonts/TTNormsPro-Regular.woff) format('woff')}
+@font-face{font-family:'TT Norms Pro';font-style:normal;font-weight:500;font-display:swap;
+  src:url(assets/fonts/TTNormsPro-Medium.woff2) format('woff2'),url(assets/fonts/TTNormsPro-Medium.woff) format('woff')}
+@font-face{font-family:'TT Norms Pro';font-style:normal;font-weight:600;font-display:swap;
+  src:url(assets/fonts/TTNormsPro-DemiBold.woff2) format('woff2'),url(assets/fonts/TTNormsPro-DemiBold.woff) format('woff')}
+@font-face{font-family:'Alistair Signature';font-style:normal;font-weight:400;font-display:swap;
+  src:url(assets/fonts/AlistairSignature.woff2) format('woff2'),url(assets/fonts/AlistairSignature.woff) format('woff')}
 :root{
-  --page-top:#ECC5AB;
-  --page-mid:#ECC8C0;
-  --page-bot:#E4ADA0;
-  --cream:#FBF1E9;
-  --card:#FEF6EE;
-  --form:#FCF1EC;
+  --page-top:#ECC4AA;
+  --page-mid:#F7C5C6;
+  --page-bot:#E2AAAD;
+  --cream:#FEFBF4;
+  --card:#FEFBF4;
+  --form:#FEFBF4;
   --green:#6F8B6E;       /* sage button */
   --green-deep:#5E7A5E;
   --script:#2F7A47;      /* emerald script */
@@ -36,7 +50,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   background:linear-gradient(180deg,var(--page-top) 0%,var(--page-mid) 48%,var(--page-bot) 100%) fixed;
-  color:var(--ink);font-family:'Montserrat',sans-serif;font-weight:300;line-height:1.6;
+  color:var(--ink);font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:300;line-height:1.6;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 .stage{
@@ -47,9 +61,9 @@ body{
 img{display:block;max-width:100%}
 
 /* ---------- type ---------- */
-.eyebrow{font-family:'Montserrat',sans-serif;font-weight:500;font-size:13px;letter-spacing:.02em;color:var(--label);text-align:center}
-.script{font-family:'Marck Script',cursive;color:var(--script);font-weight:400;line-height:1.05}
-.num{font-family:'Jost','Montserrat',sans-serif;font-variant-numeric:tabular-nums}
+.eyebrow{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:500;font-size:13px;letter-spacing:.02em;color:var(--label);text-align:center}
+.script{font-family:'Alistair Signature','Marck Script',cursive;color:var(--script);font-weight:400;line-height:1.05}
+.num{font-family:'TT Norms Pro','Manrope',sans-serif;font-variant-numeric:tabular-nums}
 
 /* ---------- reveal ---------- */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1)}
@@ -63,9 +77,8 @@ img{display:block;max-width:100%}
 .card.white{background:var(--card)}
 .card.formc{background:var(--form)}
 .card .orn{position:absolute;inset:0;z-index:0;
-  background:url(assets/ornament-tile.png) center top/300px auto repeat;
-  opacity:.85;pointer-events:none}
-.card.formc .orn{opacity:.85}
+  background:url(assets/ornament-soft.png) top center/100% auto repeat-y;
+  opacity:.16;pointer-events:none}
 .card>*{position:relative;z-index:2}
 .band{position:relative;text-align:center;padding:34px 26px 30px;z-index:1}
 
@@ -76,10 +89,10 @@ img{display:block;max-width:100%}
 .hero{padding-top:54px;padding-bottom:46px;min-height:0}
 .hero .sw-hero{width:62px;top:34px;right:24px}
 .hero-title{position:relative;text-align:center;margin:26px 0 30px;min-height:96px}
-.hero-title .qz{font-family:'Montserrat',sans-serif;font-weight:500;font-size:15px;letter-spacing:.06em;color:var(--green);position:relative;z-index:3;display:inline-block;transform:translate(8px,-6px)}
-.hero-title .nm{font-family:'Marck Script',cursive;color:var(--script);font-size:clamp(58px,21cqw,80px);line-height:.8;margin-top:-18px}
-.greet{font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px;color:var(--ink);text-align:center;margin:4px 0 18px;letter-spacing:.01em}
-.body{font-family:'Montserrat',sans-serif;font-weight:300;font-size:13.5px;line-height:1.75;color:#5e564f;text-align:center;max-width:32ch;margin:0 auto;text-wrap:pretty}
+.hero-title .qz{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:500;font-size:15px;letter-spacing:.06em;color:var(--green);position:relative;z-index:3;display:inline-block;transform:translate(8px,-6px)}
+.hero-title .nm{font-family:'Alistair Signature','Marck Script',cursive;color:var(--script);font-size:clamp(58px,21cqw,80px);line-height:.8;margin-top:-18px}
+.greet{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:600;font-size:15px;color:var(--ink);text-align:center;margin:4px 0 18px;letter-spacing:.01em}
+.body{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:300;font-size:13.5px;line-height:1.75;color:#5e564f;text-align:center;max-width:32ch;margin:0 auto;text-wrap:pretty}
 
 /* ---------- HOSTS band ---------- */
 .hosts .eyebrow{margin-bottom:6px}
@@ -91,17 +104,17 @@ img{display:block;max-width:100%}
 .venue .place{font-size:clamp(40px,15cqw,54px);text-align:center;margin:2px 0 22px}
 .cal-month-wrap{position:relative}
 .cal-month-wrap .sw-tamyz{position:absolute;width:54px;right:34px;top:-2px;z-index:4;pointer-events:none;opacity:.96}
-.mapbtn{display:block;width:100%;max-width:330px;margin:0 auto;font-family:'Montserrat',sans-serif;font-weight:400;
+.mapbtn{display:block;width:100%;max-width:330px;margin:0 auto;font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:400;
   letter-spacing:.34em;text-transform:uppercase;font-size:12px;text-align:center;padding:18px 16px;
   color:#FBF3EC;background:var(--green);border:none;border-radius:1px;cursor:pointer;text-decoration:none;
   transition:background .3s,transform .3s}
 .mapbtn:hover{background:var(--green-deep);transform:translateY(-2px)}
-.dt{font-family:'Jost','Montserrat',sans-serif;font-weight:300;font-size:18px;line-height:1.95;color:#4a443e;text-align:center;margin:30px 0 8px;letter-spacing:.01em}
-.cal-month{font-family:'Marck Script',cursive;color:var(--script);font-size:clamp(46px,16cqw,60px);text-align:center;margin:40px 0 26px}
+.dt{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:300;font-size:18px;line-height:1.95;color:#4a443e;text-align:center;margin:30px 0 8px;letter-spacing:.01em}
+.cal-month{font-family:'Alistair Signature','Marck Script',cursive;color:var(--script);font-size:clamp(46px,16cqw,60px);text-align:center;margin:40px 0 26px}
 .cal{max-width:360px;margin:0 auto;display:grid;grid-template-columns:repeat(7,1fr);gap:14px 2px}
-.cal .dow{font-family:'Montserrat',sans-serif;font-weight:500;font-size:12px;letter-spacing:.03em;color:#A89A8D;text-align:center;padding-bottom:4px}
+.cal .dow{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:500;font-size:12px;letter-spacing:.03em;color:#A89A8D;text-align:center;padding-bottom:4px}
 .cal .dy{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center;
-  font-family:'Jost','Montserrat',sans-serif;font-weight:400;font-size:clamp(15px,4.6vw,18px);color:#3a352f}
+  font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:400;font-size:clamp(15px,4.6vw,18px);color:#3a352f}
 .cal .we{color:var(--red)}
 .cal .em{color:transparent}
 .cal .mark{font-weight:500}
@@ -113,33 +126,33 @@ img{display:block;max-width:100%}
 .count .script{font-size:clamp(30px,11cqw,40px);margin-bottom:30px}
 .cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:360px;margin:0 auto}
 .cd-cell{text-align:center}
-.cd-num{font-family:'Jost','Montserrat',sans-serif;font-weight:300;font-size:clamp(30px,10vw,40px);line-height:1;color:#4a443e;font-variant-numeric:tabular-nums}
+.cd-num{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:300;font-size:clamp(30px,10vw,40px);line-height:1;color:#4a443e;font-variant-numeric:tabular-nums}
 .cd-line{height:1px;background:#8a8078;margin:12px 22% 9px;opacity:.55}
-.cd-lbl{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7c7066}
+.cd-lbl{font-family:'TT Norms Pro','Manrope',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7c7066}
 
 /* ---------- FORM ---------- */
 .formc .sw-form{width:86px;left:18px;top:18px;transform:rotate(2deg)}
 .formc .eyebrow{margin-bottom:24px;font-size:14px;color:#6f655c}
 .field{margin-bottom:20px}
-.field label{display:block;font-family:'Montserrat',sans-serif;font-weight:500;font-size:14px;color:#5b524a;margin-bottom:10px}
+.field label{display:block;font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:500;font-size:14px;color:#5b524a;margin-bottom:10px}
 .field input,.field textarea{width:100%;background:var(--input);border:none;border-radius:1px;color:#4a423b;
-  font-family:'Montserrat',sans-serif;font-weight:300;font-size:14px;padding:15px 16px;transition:box-shadow .25s,background .25s}
+  font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:300;font-size:14px;padding:15px 16px;transition:box-shadow .25s,background .25s}
 .field textarea{resize:vertical;min-height:96px}
 .field input::placeholder,.field textarea::placeholder{color:#9a857f}
 .field input:focus,.field textarea:focus{outline:none;background:#e4c2bf;box-shadow:0 0 0 1px var(--input-line)}
 .seg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.seg button{font-family:'Montserrat',sans-serif;font-weight:400;font-size:12px;padding:15px 4px;white-space:nowrap;
+.seg button{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:400;font-size:12px;padding:15px 4px;white-space:nowrap;
   background:transparent;border:1px solid var(--input-line);color:#6a5f57;border-radius:1px;cursor:pointer;transition:all .25s}
 .seg button.on{background:var(--seg-on);border-color:var(--seg-on);color:#5b4c46;font-weight:500}
-.submit{display:block;width:100%;max-width:330px;margin:6px auto 0;font-family:'Montserrat',sans-serif;font-weight:400;
+.submit{display:block;width:100%;max-width:330px;margin:6px auto 0;font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:400;
   letter-spacing:.34em;text-transform:uppercase;font-size:12px;text-align:center;padding:18px 16px;
   color:#FBF3EC;background:var(--green);border:none;border-radius:1px;cursor:pointer;transition:background .3s,transform .3s}
 .submit:hover{background:var(--green-deep);transform:translateY(-2px)}
 .form-done{text-align:center;margin:18px auto 0;display:none}
 .form-done.show{display:block}
 .form-done .ic{width:54px;height:54px;border-radius:50%;border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
-.form-done h3{font-family:'Marck Script',cursive;color:var(--script);font-size:34px;margin-bottom:6px}
-.form-done p{font-family:'Montserrat',sans-serif;font-weight:300;font-size:14px;color:#5b524a}
+.form-done h3{font-family:'Alistair Signature','Marck Script',cursive;color:var(--script);font-size:34px;margin-bottom:6px}
+.form-done p{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:300;font-size:14px;color:#5b524a}
 
 /* ---------- AUDIO ---------- */
 .audio-btn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;width:46px;height:46px;border-radius:50%;
@@ -164,13 +177,13 @@ img{display:block;max-width:100%}
 .veil *{user-select:none;-webkit-user-select:none}
 .veil.gone{opacity:0;visibility:hidden}
 .veil .v-sw{width:74px;opacity:.95;animation:vfloat 1.1s cubic-bezier(.22,.61,.36,1) both}
-.veil .v-eye{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;
+.veil .v-eye{font-family:'TT Norms Pro','Manrope',sans-serif;font-size:12px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;
   color:var(--green);opacity:0;animation:vfade 1s ease .25s forwards;padding-left:.34em}
-.veil .v-name{font-family:'Marck Script',cursive;color:var(--script);font-size:clamp(60px,20vw,92px);line-height:.85;
+.veil .v-name{font-family:'Alistair Signature','Marck Script',cursive;color:var(--script);font-size:clamp(60px,20vw,92px);line-height:.85;
   opacity:0;animation:vfade 1s ease .4s forwards}
-.veil .v-date{font-family:'Jost','Montserrat',sans-serif;font-size:13px;letter-spacing:.3em;color:#7c6b62;
+.veil .v-date{font-family:'TT Norms Pro','Manrope',sans-serif;font-size:13px;letter-spacing:.3em;color:#7c6b62;
   opacity:0;animation:vfade 1s ease .6s forwards}
-.veil .open-btn{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#FBF3EC;
+.veil .open-btn{font-family:'TT Norms Pro','Manrope',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#FBF3EC;
   background:var(--green);border:none;padding:16px 36px;border-radius:1px;cursor:pointer;
   box-shadow:0 16px 34px -18px rgba(80,60,50,.8);transition:background .3s,transform .3s,opacity .5s;
   opacity:0;animation:vfade 1s ease .8s forwards;margin-top:6px}
@@ -330,7 +343,7 @@ tick();setInterval(tick,1000);
 })();
 
 /* ---------- RSVP → Telegram ---------- */
-const TELEGRAM_BOT_TOKEN = '8889568967:AAFj9XJkahZngchqttKS0LuS6Z4PETaP6kQ';
+const TELEGRAM_BOT_TOKEN = '8849977646:AAFtcsYa5Zkifttu6jclsISKtLNnkPJgEDE';
 const TELEGRAM_CHAT_IDS  = ['342132743','637700648'];
 function sendToTelegram(d){
   if(!TELEGRAM_BOT_TOKEN||!TELEGRAM_CHAT_IDS.length)return;
