@@ -344,7 +344,7 @@ tick();setInterval(tick,1000);
 
 /* ---------- RSVP → Telegram ---------- */
 const TELEGRAM_BOT_TOKEN = '8849977646:AAFtcsYa5Zkifttu6jclsISKtLNnkPJgEDE';
-const TELEGRAM_CHAT_IDS  = ['342132743'];
+const TELEGRAM_CHAT_IDS  = ['342132743','433207724'];
 function sendToTelegram(d){
   if(!TELEGRAM_BOT_TOKEN||!TELEGRAM_CHAT_IDS.length)return;
   const text='💌 Қыз Ұзату — Елдана\n\n👤 '+d.name+'\n'+(d.attending==='yes'?'✅ Келемін · 👥 '+d.guests:'🙏 Келе алмаймын')+(d.msg?'\n💬 '+d.msg:'');
