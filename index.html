@@ -79,7 +79,9 @@ img{display:block;max-width:100%}
 .card.formc{background:var(--form)}
 /* ornament fills the cream cards only; the pink bands stay flat (like the PDF) */
 .card .orn{position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:url(assets/ornament-card.png) top center/112% auto repeat-y;opacity:.17}
+  background:url(assets/ornament-card.png) center top/158% auto repeat-y;opacity:.1;
+  -webkit-mask:radial-gradient(125% 70% at 50% 50%,transparent 20%,rgba(0,0,0,.45) 52%,#000 82%);
+  mask:radial-gradient(125% 70% at 50% 50%,transparent 20%,rgba(0,0,0,.45) 52%,#000 82%)}
 .card>*{position:relative;z-index:2}
 .band{position:relative;text-align:center;padding:34px 26px 30px}
 
