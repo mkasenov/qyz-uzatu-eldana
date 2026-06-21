@@ -57,7 +57,7 @@ body{
   max-width:430px;margin:0 auto;position:relative;
   background:linear-gradient(180deg,var(--page-top) 0%,var(--page-mid) 48%,var(--page-bot) 100%);
   min-height:100vh;box-shadow:0 0 70px rgba(120,80,60,.18);container-type:inline-size;
-  padding-top:18px;
+  padding-top:8px;
 }
 img{display:block;max-width:100%}
 
@@ -73,15 +73,16 @@ img{display:block;max-width:100%}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
 /* ---------- cards / bands ---------- */
-.card{position:relative;margin:14px 26px;border-radius:2px;overflow:hidden;padding:46px 24px 50px;z-index:1}
+.card{position:relative;margin:10px 12px;border-radius:2px;overflow:hidden;padding:46px 22px 50px;z-index:1}
 .card.cream{background:var(--cream)}
-.card.white{background:var(--card)}
-.card.formc{background:var(--form)}
+.card.white{background:var(--card);padding-top:70px}
+.card.formc{background:var(--form);padding-top:100px;padding-bottom:100px}
 /* ornament fills the cream cards only; the pink bands stay flat (like the PDF) */
-.card .orn{position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:url(assets/ornament-card.png) center top/158% auto repeat-y;opacity:.1;
-  -webkit-mask:radial-gradient(125% 70% at 50% 50%,transparent 20%,rgba(0,0,0,.45) 52%,#000 82%);
-  mask:radial-gradient(125% 70% at 50% 50%,transparent 20%,rgba(0,0,0,.45) 52%,#000 82%)}
+.card .orn{position:absolute;inset:0 20px;z-index:0;pointer-events:none;
+  background:url(assets/ornament-carpet.png) center top/100% auto repeat-y;opacity:.15}
+.hero .orn{inset:20px 20px 0}
+.venue .orn{background-position:center -30px}
+.formc .orn{background-position:center -100px}
 .card>*{position:relative;z-index:2}
 .band{position:relative;text-align:center;padding:34px 26px 30px}
 
@@ -91,6 +92,7 @@ img{display:block;max-width:100%}
 /* ---------- HERO ---------- */
 .hero{padding-top:54px;padding-bottom:46px;min-height:0}
 .hero .sw-hero{width:62px;top:34px;right:24px}
+.hero-top{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:500;font-size:15px;letter-spacing:.01em;color:var(--ink);text-align:center;margin-top:4px}
 .hero-title{position:relative;text-align:center;margin:26px 0 30px;min-height:96px}
 .hero-title .qz{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:500;font-size:15px;letter-spacing:.06em;color:var(--green);position:relative;z-index:3;display:inline-block;transform:translate(8px,-6px)}
 .hero-title .nm{font-family:'Alistair Signature','Marck Script',cursive;color:var(--script);font-size:clamp(58px,21cqw,80px);line-height:.8;margin-top:-18px}
@@ -102,7 +104,7 @@ img{display:block;max-width:100%}
 .hosts .script{font-size:clamp(34px,12cqw,44px)}
 
 /* ---------- VENUE ---------- */
-.venue .sw-venue{width:120px;left:2px;bottom:auto;top:286px;transform:rotate(-2deg)}
+.venue .sw-venue{width:120px;left:12px;bottom:auto;top:286px;transform:rotate(-2deg)}
 .venue-eye{margin-bottom:4px}
 .venue .place{font-size:clamp(40px,15cqw,54px);text-align:center;margin:2px 0 22px}
 .cal-month-wrap{position:relative}
@@ -125,13 +127,13 @@ img{display:block;max-width:100%}
 .cal .mark span{position:relative;z-index:1}
 
 /* ---------- COUNTDOWN band ---------- */
-.count .eyebrow{margin-bottom:2px}
-.count .script{font-size:clamp(30px,11cqw,40px);margin-bottom:30px}
+.count .script{font-size:clamp(30px,11cqw,40px);margin-bottom:2px}
+.count .eyebrow{margin-bottom:34px;color:var(--ink)}
 .cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:360px;margin:0 auto}
 .cd-cell{text-align:center}
 .cd-num{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:300;font-size:clamp(30px,10vw,40px);line-height:1;color:#4a443e;font-variant-numeric:tabular-nums}
 .cd-line{height:1px;background:#8a8078;margin:12px 22% 9px;opacity:.55}
-.cd-lbl{font-family:'TT Norms Pro','Manrope',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7c7066}
+.cd-lbl{font-family:'TT Norms Pro','Manrope',sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--script)}
 
 /* ---------- FORM ---------- */
 .formc .sw-form{width:86px;left:18px;top:18px;transform:rotate(2deg)}
@@ -220,12 +222,13 @@ img{display:block;max-width:100%}
   <section class="card cream hero" data-screen-label="Hero">
     <div class="orn"></div>
     <img class="sw sw-hero" src="assets/swallow-hero.png" alt="">
-    <div class="hero-title reveal">
+    <div class="hero-top reveal">Тойға шақыру</div>
+    <div class="hero-title reveal d1">
       <span class="qz">Қыз Ұзату</span>
       <div class="nm">Елдана</div>
     </div>
-    <div class="greet reveal d1">Қадірлі ағайын-туыс, дос-жаран!</div>
-    <p class="body reveal d2">Қызымыз Елдананың жаңа өмір табалдырығын аттап, ұзатылу салтанатының куәсі болуға шақырамыз. Сіздерді той төрінен көру — біз үшін үлкен мәртебе.</p>
+    <div class="greet reveal d2">Қадірлі ағайын-туыс, дос-жаран!</div>
+    <p class="body reveal d3">Қызымыз Елдананың жаңа өмір табалдырығын аттап, ұзатылу салтанатының куәсі болуға шақырамыз. Сіздерді той төрінен көру — біз үшін үлкен мәртебе.</p>
   </section>
 
   <!-- ===== HOSTS ===== -->
@@ -242,14 +245,14 @@ img{display:block;max-width:100%}
     <div class="script place reveal d1">Paris hall</div>
     <a class="mapbtn reveal d1" id="mapBtn" href="https://2gis.kz/almaty/geo/70000001038021537/77.041932,43.402672" target="_blank" rel="noopener">Картаны ашу</a>
     <div class="dt reveal d2">19.08.2026<br>18:00<br>Алматы обл.,<br>Жалын ББС аумағы, 31в</div>
-    <div class="cal-month-wrap reveal"><div class="cal-month script">Тамыз</div><img class="sw-tamyz" src="assets/swallow-hero.png" alt=""></div>
+    <div class="cal-month-wrap reveal"><div class="cal-month script">Тамыз</div><img class="sw-tamyz" src="assets/swallow-form.png" alt=""></div>
     <div class="cal reveal d1" id="calendar"></div>
   </section>
 
   <!-- ===== COUNTDOWN ===== -->
   <section class="band count" data-screen-label="Countdown">
-    <div class="eyebrow reveal">Тойға дейін</div>
-    <div class="script reveal d1">аз уақыт қалды</div>
+    <div class="script reveal">аз уақыт қалды</div>
+    <div class="eyebrow reveal d1">Тойға дейін</div>
     <div class="cd-grid reveal d2" id="countdown">
       <div class="cd-cell"><div class="cd-num" id="cd-d">00</div><div class="cd-line"></div><div class="cd-lbl">Күн</div></div>
       <div class="cd-cell"><div class="cd-num" id="cd-h">00</div><div class="cd-line"></div><div class="cd-lbl">Сағат</div></div>
