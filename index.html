@@ -72,15 +72,16 @@ img{display:block;max-width:100%}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
 /* ---------- cards / bands ---------- */
-.card{position:relative;margin:14px 14px;border-radius:2px;overflow:hidden;padding:46px 26px 50px;z-index:1}
+.card{position:relative;margin:14px 14px;border-radius:2px;padding:46px 26px 50px}
 .card.cream{background:var(--cream)}
 .card.white{background:var(--card)}
 .card.formc{background:var(--form)}
-.card .orn{position:absolute;inset:0;z-index:0;
-  background:url(assets/ornament-soft.png) top center/100% auto repeat-y;
-  opacity:.16;pointer-events:none}
 .card>*{position:relative;z-index:2}
-.band{position:relative;text-align:center;padding:34px 26px 30px;z-index:1}
+.band{position:relative;text-align:center;padding:34px 26px 30px}
+.band>*{position:relative;z-index:2}
+/* one continuous ornament field across the whole page (like the SVG) */
+.stage-orn{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;
+  background:url(assets/ornament-soft.png) top center/113% auto repeat-y;opacity:.12}
 
 /* ---------- swallows ---------- */
 .sw{position:absolute;z-index:4;pointer-events:none;opacity:.96;filter:drop-shadow(0 4px 10px rgba(150,90,90,.12))}
@@ -212,10 +213,10 @@ img{display:block;max-width:100%}
 </div>
 
 <div class="stage">
+  <div class="stage-orn"></div>
 
   <!-- ===== HERO ===== -->
   <section class="card cream hero" data-screen-label="Hero">
-    <div class="orn"></div>
     <img class="sw sw-hero" src="assets/swallow-hero.png" alt="">
     <div class="hero-title reveal">
       <span class="qz">Қыз Ұзату</span>
@@ -233,7 +234,6 @@ img{display:block;max-width:100%}
 
   <!-- ===== VENUE + CALENDAR ===== -->
   <section class="card white venue" data-screen-label="Venue">
-    <div class="orn"></div>
     <img class="sw sw-venue" src="assets/swallow-venue.png" alt="">
     <div class="eyebrow venue-eye reveal">Мекен-жайымыз</div>
     <div class="script place reveal d1">Paris hall</div>
@@ -257,7 +257,6 @@ img{display:block;max-width:100%}
 
   <!-- ===== RSVP FORM ===== -->
   <section class="card formc" data-screen-label="RSVP">
-    <div class="orn"></div>
     <img class="sw sw-form" src="assets/swallow-form.png" alt="">
     <div class="eyebrow reveal">Сауалнама</div>
 
